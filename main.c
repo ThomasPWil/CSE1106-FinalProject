@@ -4,6 +4,8 @@
 
 #define PIN 17
 
+int usertemp = 0;
+
 int main (int argc, char* argvp[]){
     gpioInitialise();
     gpioSetMode(PIN,PI_OUTPUT);
@@ -12,5 +14,8 @@ int main (int argc, char* argvp[]){
     gpioWrite(PIN,0); //LED OFF
     getchar(); //waits for Enter key
     gpioTerminate();
+    
+    scanf("%d", &usertemp);
+    
     return 0;
 }
