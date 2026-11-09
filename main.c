@@ -6,7 +6,8 @@
 
 int usertemp = 0;
 
-
+void checkReadings(int upperLimit, int lowerLimit, int arr[], int size);
+void calculateAverage(int arr[], int size);
 
 int upperLimit = 76;
 int lowerLimit = 68;
