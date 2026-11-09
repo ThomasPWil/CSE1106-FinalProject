@@ -6,6 +6,12 @@
 
 int usertemp = 0;
 
+void checkReadings(int upperLimit, int lowerLimit, int arr[]);
+
+int upperLimit = 76;
+int lowerLimit = 68;
+int size = 3;
+
 int main (int argc, char* argvp[]){
     gpioInitialise();
     gpioSetMode(PIN,PI_OUTPUT);
@@ -18,4 +24,17 @@ int main (int argc, char* argvp[]){
     scanf("%d", &usertemp);
     
     return 0;
+}
+
+void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
+printf("Temperature    System Status    Warning LED");
+for (int i = 0; i < size: i++){
+    printf("%d F           ", arr[i]);
+    if (arr[i] > 76 || arr[i] < 68){
+        printf("WARNING          ");
+        printf("ON\n");
+    } else {
+        printf("NORMAL           ");
+        printf("OFF\n");
+    }   
 }
