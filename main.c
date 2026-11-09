@@ -38,6 +38,9 @@ int main (int argc, char* argvp[]){
 }
 
 void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
+
+bool light = 0;
+    
   printf("Temperature    System Status    Warning LED\n");
   char status[50] = "none";
   fptr = fopen("filename.txt", "w");
@@ -68,6 +71,18 @@ for (int i = 0; i < size; i++){
     // Write some text to the file
    
   }
+
+    if (light){
+    gpioWrite(PIN,1); //LED ON
+    printf("Press ENTER to continue");
+    getchar(); // waits for Enter key
+} else{
+    gpioWrite(PIN,0); //LED OFF
+    getchar(); //waits for Enter key
+} else{
+    printf("Press ENTER to continue");
+    getchar(); // waits for Enter key
+}
 }
 
 void calculateAverage(int arr[], int size){
