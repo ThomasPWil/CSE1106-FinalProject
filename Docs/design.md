@@ -1,1 +1,1 @@
-
+This project takes in three temperatures entered through user input and computes the average of them and displays whether or not they are within the normal range of 68-76. If they are we print a status of Normal for the output if not we print warning for the Status and light up the LED light on the breadboard. After that we write the values and status to the temperatues_log.csv file
