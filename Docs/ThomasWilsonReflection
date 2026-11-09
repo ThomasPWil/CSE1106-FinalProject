@@ -1,1 +1,9 @@
+1. I primarily contributed bug fixing as well as writing code for file handling to some basic for loop code to take in user inputs.
 
+2. The most challenging part was getting the led light to come om.
+
+3. We used testing and tried different code types and orders of code lines to have the light come on.
+
+4. understanding hardware and circuits and the software coding/debugging processes
+
+5. make the program more robust to acomadate letters and flot values as well a soncvert from celsius to farenheight.
