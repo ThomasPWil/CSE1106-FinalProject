@@ -6,7 +6,7 @@
 
 int usertemp = 0;
 
-void checkReadings(int upperLimit, int lowerLimit, int arr[]);
+
 
 int upperLimit = 76;
 int lowerLimit = 68;
@@ -28,7 +28,7 @@ int main (int argc, char* argvp[]){
 
 void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
 printf("Temperature    System Status    Warning LED");
-for (int i = 0; i < size: i++){
+for (int i = 0; i < size; i++){
     printf("%d F           ", arr[i]);
     if (arr[i] > 76 || arr[i] < 68){
         printf("WARNING          ");
@@ -37,4 +37,5 @@ for (int i = 0; i < size: i++){
         printf("NORMAL           ");
         printf("OFF\n");
     }   
+  }
 }
