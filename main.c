@@ -34,17 +34,28 @@ int main (int argc, char* argvp[]){
 }
 
 void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
+
+bool light = 0;
+    
 printf("Temperature    System Status    Warning LED\n");
 for (int i = 0; i < size; i++){
     printf("%d F           ", arr[i]);
     if (arr[i] > 76 || arr[i] < 68){
         printf("WARNING          ");
         printf("ON\n");
+        bool light = 1;
     } else {
         printf("NORMAL           ");
         printf("OFF\n");
     }   
   }
+if (light){
+    gpioWrite(PIN,1); //LED ON
+    getchar(); // waits for Enter key
+} else{
+    gpioWrite(PIN,0); //LED OFF
+    getchar(); //waits for Enter key
+}
 }
 
 void calculateAverage(int arr[], int size){
