@@ -39,3 +39,15 @@ for (int i = 0; i < size; i++){
     }   
   }
 }
+
+void calculateAverage(int arr[], int size){
+double sum = 0;
+    for (int i < 0; i < size; i++){
+    sum += arr[i];
+    }
+    
+double average = sum / size;
+
+printf("Average: %.2f\n", average);
+    
+}
