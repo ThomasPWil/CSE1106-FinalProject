@@ -29,6 +29,10 @@ int main (int argc, char* argvp[]){
         scanf("%d", &usertemp);
         tempArr[i] = usertemp;
     }
+
+    checkReadings(upperLimit, lowerLimit, tempArr, size);
+
+    calculateAverage(tempArr, size);
     
     return 0;
 }
