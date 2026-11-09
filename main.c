@@ -38,9 +38,15 @@ int main (int argc, char* argvp[]){
 }
 
 void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
-printf("Temperature    System Status    Warning LED\n");
-char status[50] = "none";
-
+  printf("Temperature    System Status    Warning LED\n");
+  char status[50] = "none";
+  fptr = fopen("filename.txt", "w");
+  if(fptr == NULL)
+  {
+    printf("could not open file");
+    return;
+  }
+    
 for (int i = 0; i < size; i++){
     printf("%d F           ", arr[i]);
     if (arr[i] > 76 || arr[i] < 68){
@@ -48,12 +54,6 @@ for (int i = 0; i < size; i++){
         printf("ON\n");
         
         strcpy(status, "WARNING");
-        if(fptr == NULL)
-         {
-          printf("could not open file");
-          return;
-        }
-        fptr = fopen("filename.txt", "w");
         fprintf(fptr, "%d", "%s", arr[i], status);
     
         
@@ -61,13 +61,6 @@ for (int i = 0; i < size; i++){
         printf("NORMAL           ");
         strcpy(status, "NORMAL");
         printf("OFF\n");
-        
-        fptr = fopen("filename.txt", "w");
-         if(fptr == NULL)
-         {
-          printf("could not open file");
-          return;
-        }
         fprintf(fptr, "%d", "%s", arr[i], status);
     }
    
