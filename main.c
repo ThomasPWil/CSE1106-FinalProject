@@ -11,6 +11,7 @@ int usertemp = 0;
 int upperLimit = 76;
 int lowerLimit = 68;
 int size = 3;
+int tempArr[3] = {0,0,0};
 
 int main (int argc, char* argvp[]){
     gpioInitialise();
@@ -21,7 +22,12 @@ int main (int argc, char* argvp[]){
     getchar(); //waits for Enter key
     gpioTerminate();
     
-    scanf("%d", &usertemp);
+    for(int i = 0; i < size; i++)
+    {
+        printf("Enter a tempature: ");
+        scanf("%d", &usertemp);
+        tempArr[i] = usertemp;
+    }
     
     return 0;
 }
