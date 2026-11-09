@@ -16,12 +16,6 @@ int tempArr[3] = {0,0,0};
 
 int main (int argc, char* argvp[]){
     gpioInitialise();
-    gpioSetMode(PIN,PI_OUTPUT);
-    gpioWrite(PIN,1); //LED ON
-    getchar(); // waits for Enter key
-    gpioWrite(PIN,0); //LED OFF
-    getchar(); //waits for Enter key
-    gpioTerminate();
     
     for(int i = 0; i < size; i++)
     {
@@ -33,6 +27,8 @@ int main (int argc, char* argvp[]){
     checkReadings(upperLimit, lowerLimit, tempArr, size);
 
     calculateAverage(tempArr, size);
+
+    gpioTerminate();
     
     return 0;
 }
@@ -55,10 +51,12 @@ for (int i = 0; i < size; i++){
   }
 if (light){
     gpioWrite(PIN,1); //LED ON
+    printf("Press ENTER to continue");
     getchar(); // waits for Enter key
-} else{
     gpioWrite(PIN,0); //LED OFF
-    getchar(); //waits for Enter key
+} else{
+    printf("Press ENTER to continue");
+    getchar(); // waits for Enter key
 }
 }
 
