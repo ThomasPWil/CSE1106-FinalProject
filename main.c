@@ -55,7 +55,7 @@ for (int i = 0; i < size; i++){
     if (arr[i] > 76 || arr[i] < 68){
         printf("WARNING          ");
         printf("ON\n");
-        
+        light = 1;
         strcpy(status, "WARNING");
         fprintf(fptr, "%d", "%s", arr[i], status);
     
