@@ -33,7 +33,7 @@ int main (int argc, char* argvp[]){
 }
 
 void checkReadings(int upperLimit, int lowerLimit, int arr[], int size){
-printf("Temperature    System Status    Warning LED");
+printf("Temperature    System Status    Warning LED\n");
 for (int i = 0; i < size; i++){
     printf("%d F           ", arr[i]);
     if (arr[i] > 76 || arr[i] < 68){
