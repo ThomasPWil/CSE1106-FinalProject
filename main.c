@@ -48,7 +48,11 @@ for (int i = 0; i < size; i++){
         printf("ON\n");
         
         strcpy(status, "WARNING");
-        
+        if(fptr == NULL)
+         {
+          printf("could not open file");
+          return;
+        }
         fptr = fopen("filename.txt", "w");
         fprintf(fptr, "%d", "%s", arr[i], status);
     
@@ -59,6 +63,11 @@ for (int i = 0; i < size; i++){
         printf("OFF\n");
         
         fptr = fopen("filename.txt", "w");
+         if(fptr == NULL)
+         {
+          printf("could not open file");
+          return;
+        }
         fprintf(fptr, "%d", "%s", arr[i], status);
     }
    
